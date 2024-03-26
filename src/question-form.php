@@ -1,21 +1,36 @@
-<?php header("Content-Type: text/html; charset=utf-8");
+<?php
+header("Content-Type: text/html; charset=utf-8");
 
+// Fetching form data
 $name = $_POST['name'];
 $sername = $_POST['sername'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
+$question = $_POST['question']; // Assuming you have a field named 'question' in your form
 
-if(($question !="") & ($name !=""))
-if(($question !="") & ($sername !=""))
-if(($question !="") & ($phone !=""))
-if(($question !="") & ($email !=""))
-
+// Check if all required fields are not empty
+if ($question != "" && $name != "" && $sername != "" && $phone != "" && $email != "") {
     $address = "nevin523348@gmail.com";
-$massage = "Имя: ".$name."\nПитання: ".$question."";
-$massage = "Фамилия: ".$sername."\nПитання: ".$question."";
-$massage = "Телефон: ".$phone."\nПитання: ".$question."";
-$massage = "Почта: ".$email."\nПитання: ".$question."";
-$verify = mail($address, $theme, $massage, "Content-type:text/plain; charset=UTF-8\r\n");
+    $theme = "New message from your website"; // You need to define a subject for the email
 
-print "<script>alert(\"Повідомлення успішно відправлено!\");window.location = '/index.html' </script>";
+    // Concatenate all the form data into the message
+    $message = "Name: $name\n";
+    $message .= "Surname: $sername\n";
+    $message .= "Phone: $phone\n";
+    $message .= "Email: $email\n";
+    $message .= "Question: $question\n";
+
+    // Send the email
+    $verify = mail($address, $theme, $message, "Content-type:text/plain; charset=UTF-8\r\n");
+
+    // Check if the mail function returned true
+    if ($verify) {
+        echo "<script>alert(\"Message successfully sent!\");window.location = '/index.html';</script>";
+    } else {
+        echo "<script>alert(\"Failed to send message. Please try again later.\");window.location = '/index.html';</script>";
+    }
+} else {
+    // Handle case where required fields are not filled
+    echo "<script>alert(\"Please fill in all the required fields.\");window.location = '/index.html';</script>";
+}
 ?>
