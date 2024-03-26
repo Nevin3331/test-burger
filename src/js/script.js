@@ -17,7 +17,6 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 
-
 let prices = document.getElementsByClassName("products-item-price");
 document.getElementById("change-currency").onclick = function (e) {
     let currentCurrency = e.target.innerText;
@@ -43,7 +42,6 @@ document.getElementById("change-currency").onclick = function (e) {
         prices[i].innerText = convertedPrice + newCurrency; 
     }
 }
-
 
 
 $('.special_carousel').slick({

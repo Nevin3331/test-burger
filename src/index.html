@@ -235,20 +235,24 @@
                         заказа</div>
                     <div class="order-form-inputs">
                         <div class="order-form-input">
-                            <input type="text" placeholder="Имя" id="name">
+                            <input type="text" placeholder="Имя" id="name" name="name"> <!-- Added name attribute -->
                         </div>
                         <div class="order-form-input">
-                            <input type="text" placeholder="Фамилия" id="sername">
+                            <input type="text" placeholder="Фамилия" id="sername" name="sername">
+                            <!-- Added name attribute -->
                         </div>
                         <div class="order-form-input">
-                            <input type="text" placeholder="Телефон" id="phone">
+                            <input type="text" placeholder="Телефон" id="phone" name="phone">
+                            <!-- Added name attribute -->
                         </div>
                         <div class="order-form-input">
-                            <input type="text" placeholder="Email" id="email">
+                            <input type="text" placeholder="Email" id="email" name="email">
+                            <!-- Added name attribute -->
                         </div>
                         <button class="button" id="order-action">Оформить заказ</button>
                     </div>
                 </form>
+
             </div>
         </div>
     </section>
@@ -267,7 +271,7 @@
 
     <script src="js/script.js"></script>
     <script src="js/lang.js"></script>
-    <script src="js/form.js"></script>
+
     <script src="js/humburger.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
