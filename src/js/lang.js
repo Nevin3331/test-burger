@@ -118,13 +118,21 @@ const langArr = {
 const select = document.querySelector('select');
 const allLang = ['ru', 'ua'];
 
+// Проверяем, есть ли значение языка в sessionStorage
+const savedLang = sessionStorage.getItem('selectedLang');
+if (savedLang) {
+    select.value = savedLang; // Восстанавливаем сохраненный язык
+}
+
 select.addEventListener('change', changeURLLanguage);
 
 function changeURLLanguage() {
     let lang = select.value;
+    sessionStorage.setItem('selectedLang', lang); // Сохраняем выбранный язык в sessionStorage
     location.href = window.location.pathname + '#' + lang;
     location.reload();
 }
+
 
 function changeLanguage() {
     let hash = window.location.hash;

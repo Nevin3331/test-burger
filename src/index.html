@@ -34,12 +34,42 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="currency" title="Изменить валюту" id="change-currency">$</div>
+                <div class="header-change">
+                    <div class="currency" title="Изменить валюту" id="change-currency">$</div>
 
-                <select class="currency-language change-lang">
-                    <option value="ru" selected>Ru</option>
-                    <option value="ua">Ua</option>
-                </select>
+                    <select id="select" class="currency-language change-lang">
+                        <option value="ru" selected>Ru</option>
+                        <option value="ua">Ua</option>
+                    </select>
+                </div>
+
+                <img class="hamburger" src="img/humburger.svg" alt="burger">
+            </div>
+
+            <div class="menu_laptop">
+                <img class="menu_close" src="img/close.svg" alt="#">
+
+                <ul class="menu_list">
+                    <li class="menu-item">
+                        <a data-link="why" class="lng-first">Почему у нас</a>
+                    </li>
+                    <li class="menu-item">
+                        <a data-link="products" class="lng-second">Меню бургеров</a>
+                    </li>
+                    <li class="menu-item">
+                        <a data-link="order" class="lng-third">Оформление заказа</a>
+                    </li>
+
+                    <div class="header-change-mobile">
+                        <div class="currency" title="Изменить валюту" id="change-currency">$</div>
+
+                        <select id="select" class="currency-language change-lang">
+                            <option value="ru" selected>Ru</option>
+                            <option value="ua">Ua</option>
+                        </select>
+                    </div>
+                </ul>
+
             </div>
         </header>
 
@@ -196,11 +226,11 @@
         <div class="container">
             <div class="order-title common-title lng-order">оформление заказа</div>
             <div class="order_wrapper">
-                <iframe width="660" height="670" src="https://www.youtube.com/embed/72UK4Y7hO4k?si=48iH4BjK2Pol8-YZ"
+                <iframe width="660" height="670" src="https://www.youtube.com/embed/72UK4Y7hO4k"
                     title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <form id="form" class="order-form">
+                <form action="question-form.php" method="post" id="form" class="order-form">
                     <div class="order-form-text">Заполните все данные и наш менеджер свяжется с вами для подтверждения
                         заказа</div>
                     <div class="order-form-inputs">
@@ -238,6 +268,8 @@
     <script src="js/script.js"></script>
     <script src="js/lang.js"></script>
     <script src="js/form.js"></script>
+    <script src="js/humburger.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
